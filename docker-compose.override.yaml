@@ -5,6 +5,7 @@ services:
   api:
     image: ghcr.io/firecrawl/firecrawl:latest
     build: !reset null
+    restart: unless-stopped
   playwright-service:
     image: ghcr.io/firecrawl/playwright-service:latest
     build: !reset null
