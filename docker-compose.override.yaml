@@ -18,5 +18,3 @@ services:
     restart: unless-stopped
   foundationdb:
     restart: unless-stopped
-  searxng:
-    restart: unless-stopped
