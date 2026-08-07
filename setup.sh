@@ -38,12 +38,6 @@ else
     echo "[3/4] No override file found — will build from source (slower first run)."
 fi
 
-if [ -f "$SCRIPT_DIR/docker-compose.recovery.yaml" ]; then
-    echo "[3/4] Copying docker-compose.recovery.yaml (durable restart policy)..."
-    cp "$SCRIPT_DIR/docker-compose.recovery.yaml" .
-else
-    echo "[3/4] No recovery override found."
-fi
 
 echo "[4/4] Starting Firecrawl..."
 docker compose pull 2>/dev/null || echo "  Pre-built images not found — building from source (this may take a few minutes)..."

@@ -1,6 +1,6 @@
-# Pre-built images — skips the 5-15 minute source build on first run.
-# Copied into /workspaces/firecrawl/ by setup.sh.
-# If these images aren't available, setup.sh falls back to building from source.
+# Pre-built images and durable recovery for Firecrawl in GitHub Codespaces.
+# This file is copied into /workspaces/firecrawl by setup.sh and is loaded
+# automatically by Docker Compose alongside docker-compose.yaml.
 services:
   api:
     image: ghcr.io/firecrawl/firecrawl:latest
@@ -9,3 +9,14 @@ services:
   playwright-service:
     image: ghcr.io/firecrawl/playwright-service:latest
     build: !reset null
+    restart: unless-stopped
+  redis:
+    restart: unless-stopped
+  rabbitmq:
+    restart: unless-stopped
+  nuq-postgres:
+    restart: unless-stopped
+  foundationdb:
+    restart: unless-stopped
+  searxng:
+    restart: unless-stopped
