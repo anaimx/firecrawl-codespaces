@@ -3,7 +3,7 @@
 # automatically by Docker Compose alongside docker-compose.yaml.
 services:
   api:
-    image: ghcr.io/firecrawl/firecrawl:latest
+    image: ghcr.io/firecrawl/firecrawl:2.10.30
     build: !reset null
     restart: unless-stopped
   playwright-service:
